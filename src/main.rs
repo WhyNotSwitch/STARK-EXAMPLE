@@ -21,25 +21,6 @@ pub extern "C" fn start(resource_id: i32) -> i32 {
 
     let proof_bytes = proof.to_bytes();
     log::log_info(format!("Proof size: {:.1} KB", proof_bytes.len() as f64 / 1024f64).as_str()).unwrap();
-    // let conjectured_security_level = options.get_proof_security_level(&proof, true);
-
-    // #[cfg(feature = "std")]
-    // {
-    //     let proven_security_level = options.get_proof_security_level(&proof, false);
-    //     debug!(
-    //         "Proof security: {} bits ({} proven)",
-    //         conjectured_security_level, proven_security_level,
-    //     );
-    // }
-
-    // #[cfg(not(feature = "std"))]
-    // debug!("Proof security: {} bits", conjectured_security_level);
-
-    // #[cfg(feature = "std")]
-    // debug!(
-    //     "Proof hash: {}",
-    //     hex::encode(blake3::hash(&proof_bytes).as_bytes())
-    // );
 
     // verify the proof
     log::log_info("---------------------").unwrap();
